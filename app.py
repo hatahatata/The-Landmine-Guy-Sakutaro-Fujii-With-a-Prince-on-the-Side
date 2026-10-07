@@ -26,11 +26,11 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.markdown("##### 📚 学習・出席パラメータ")
-    study_hours = st.slider("1週間の学習時間 (時間)", 0, 60, 20)
-    attendance = st.slider("授業の出席率 (%)", 0, 100, 80)
-    assignment = st.slider("課題の完了度 (%)", 0, 100, 75)
+    study_hours = st.slider("1週間の作業時間 (時間)", 0, 60, 20)
+    attendance = st.slider("参加率 (%)", 0, 100, 80)
+    assignment = st.slider("課題の提出度 (%)", 0, 100, 75)
     discussions = st.radio(
-        "ディスカッションへの積極参加",
+        "議論・発言の積極性",
         [1, 0],
         format_func=lambda x: "参加している" if x == 1 else "あまり参加していない",
         horizontal=True,
