@@ -5,7 +5,7 @@ import streamlit as st
 
 # --- ページ基本設定 ---
 st.set_page_config(
-    page_title="🎓 成績ランクAI診断アプリ", page_icon="🔮", layout="wide"
+    page_title="🎓 無能ランクAI診断アプリ", page_icon="🔮", layout="wide"
 )
 
 # --- API設定 ---
@@ -15,7 +15,7 @@ API_URL = "https://user-api.predictionone.sony.biz/v1/groups/qejw062trt0qwwav/cl
 # --- メインヘッダー ---
 st.title("🔮 AI学生ライフスタイル診断 (地雷判定モード)")
 st.caption(
-    "グループの中で誰が一番危険か！？AIが未来の成績ランクを予測して地雷者を認定します！"
+    "グループの中で誰が一番危険か！？AIが未来の有能ムーブを予測して地雷者を認定します！"
 )
 st.markdown("---")
 
@@ -41,7 +41,7 @@ for i, tab in enumerate(tabs):
 
         col1, col2 = st.columns(2)
         with col1:
-            st.markdown("##### 📚 学習・出席パラメータ")
+            st.markdown("##### 📚 作業・出席パラメータ")
             study_hours = st.slider(
                 "1週間の作業時間 (時間)", 0, 60, 20, key=f"study_{i}"
             )
@@ -117,7 +117,7 @@ for i, tab in enumerate(tabs):
 st.markdown("---")
 
 # --- 診断実行ボタン ---
-if st.button("💣 全員の成績と地雷判定を実行", use_container_width=True, type="primary"):
+if st.button("💣 全員の地雷判定を実行", use_container_width=True, type="primary"):
 
     results_list = []
 
