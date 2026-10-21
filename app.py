@@ -121,7 +121,7 @@ if st.button("💣 全員の地雷判定を実行", use_container_width=True, ty
 
     results_list = []
 
-    with st.spinner("Prediction One が分析中..."):
+    with st.spinner("地雷検知💣..."):
 
         # 全員のAPI通信を実行してデータを収集
         for i, p_data in enumerate(players_data):
