@@ -43,10 +43,10 @@ for i, tab in enumerate(tabs):
         with col1:
             st.markdown("##### 📚 学習・出席パラメータ")
             study_hours = st.slider(
-                "1週間の学習時間 (時間)", 0, 60, 20, key=f"study_{i}"
+                "1週間の作業時間 (時間)", 0, 60, 20, key=f"study_{i}"
             )
             attendance = st.slider(
-                "授業の出席率 (%)", 0, 100, 80, key=f"att_{i}"
+                "グループワークの出席率 (%)", 0, 100, 80, key=f"att_{i}"
             )
             assignment = st.slider(
                 "課題の完了度 (%)", 0, 100, 75, key=f"ass_{i}"
@@ -64,7 +64,7 @@ for i, tab in enumerate(tabs):
         with col2:
             st.markdown("##### 🏠 環境・モチベーション")
             motivation_label = st.selectbox(
-                "学習へのモチベーション",
+                "作業へのモチベーション",
                 ["2: 高い", "1: 普通", "0: 低い"],
                 key=f"mot_{i}",
             )
@@ -75,7 +75,7 @@ for i, tab in enumerate(tabs):
             )
 
             edutech = st.radio(
-                "EdTechツール（学習アプリ等）の活用",
+                "EdTechツール（AI等）の活用",
                 [1, 0],
                 format_func=lambda x: (
                     "活用している" if x == 1 else "使っていない"
@@ -207,7 +207,7 @@ if st.button("💣 全員の成績と地雷判定を実行", use_container_width
         # 地雷認定の特別通知
         if num_players > 1 and max_risk_player.get("risk_score", 0) > 0:
             st.error(
-                f"⚠️ **【地雷認定】** 今回のメンバーの中で最も成績リスクが高い地雷人物は **『{max_risk_player['name']}』** です！速やかに生活習慣を見直してください！"
+                f"⚠️ **【地雷認定】** 今回のメンバーの中で最も地雷リスクが高い地雷人間は **『{max_risk_player['name']}』** です！速やかに生活習慣を見直してください！"
             )
 
         st.markdown("---")
@@ -232,16 +232,16 @@ if st.button("💣 全員の成績と地雷判定を実行", use_container_width
                     fg = res["final_grade"]
 
                     if fg == 0:
-                        st.success("**🏆 ランク 0**\n\n絶対覇者！S評価連発！")
+                        st.success("**🏆 ランク 0**\n\nスーパーエリートワークマン！！！")
                     elif fg == 1:
-                        st.info("**🌟 ランク 1**\n\n秀才エリート！安定のA評価")
+                        st.info("**🌟 ランク 1**\n\n地雷回避！グループワーク始めました。")
                     elif fg == 2:
                         st.warning(
-                            "**⚖️ ランク 2**\n\n標準層。少し油断すると危険！"
+                            "**⚖️ ランク 2**\n\n地雷踏みかけ💦💣一歩踏み込んだら爆発！"
                         )
                     elif fg == 3:
                         st.error(
-                            "**🚨 ランク 3**\n\n要警戒！単位落下の危険大！"
+                            "**🚨 ランク 3**\n\n【地雷確定】☜グループの全員に謝礼金渡せ！"
                         )
 
                     st.caption("予測確率")
